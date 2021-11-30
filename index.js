@@ -30,6 +30,8 @@ var cards_ids = [];
 var cards_flipped = 0;
 var delay = 1200;
 
+
+
 Array.prototype.memory_tile_shuffle = function () {
   var i = this.length,
     j,
@@ -48,7 +50,7 @@ function newBoard() {
   cards_flipped = 0;
   var output = "";
   icons_array.memory_tile_shuffle();
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 25; i++) {
     output +=
       '<div id="tile_' +
       i +
@@ -108,6 +110,7 @@ function memoryFlipTile(tile, val) {
           // Flip the 2 tiles back over
           var tile_1 = document.getElementById(cards_ids[0]);
           var tile_2 = document.getElementById(cards_ids[1]);
+
           // tile_1.style.backgroundColor = "darkblue";
           // tile_2.style.background = "darkblue";
           //tile_2.innerHTML = "";

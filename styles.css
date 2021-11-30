@@ -15,10 +15,9 @@ div {
 }
 
 .memory_board {
-    width: 700px;
-    height: 700px;
+    width: 880px;
+    height: 880px;
     margin: auto;
-    border: 3px solid rgb(5, 1, 63);
     padding: 10px;
 }
 
@@ -68,7 +67,7 @@ div {
     transform: rotateY(180deg);
 }
 
-input {
+button {
     display: flex;
     align-items: center;
     justify-content: center;
