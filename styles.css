@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: rgb(52, 94, 233);
 }
 
 h1 {
@@ -18,7 +18,7 @@ div {
     width: 700px;
     height: 700px;
     margin: auto;
-    border: 3px solid green;
+    border: 3px solid white;
     padding: 10px;
 }
 
@@ -59,7 +59,7 @@ div {
 }
 
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: transparent;
     color: white;
     transform: rotateY(180deg);
 }
