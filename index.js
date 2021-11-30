@@ -28,6 +28,8 @@ var icons_array = [
 var vals = [];
 var cards_ids = [];
 var cards_flipped = 0;
+var delay = 1200;
+
 Array.prototype.memory_tile_shuffle = function () {
   var i = this.length,
     j,
@@ -46,7 +48,7 @@ function newBoard() {
   cards_flipped = 0;
   var output = "";
   icons_array.memory_tile_shuffle();
-  for (let i = 0; i < icons_array.length; i++) {
+  for (let i = 0; i < 16; i++) {
     output +=
       '<div id="tile_' +
       i +
@@ -86,10 +88,10 @@ function memoryFlipTile(tile, val) {
         cards_flipped += 2; //Cards flipped counter
 
         //Disable the click function for the matched cards
-        var tile_1 = document.getElementById(cards_ids[0]);
-        var tile_2 = document.getElementById(cards_ids[1]);
-        tile_1.onclick = null;
-        tile_2.onclick = null;
+        var firstGuess = document.getElementById(cards_ids[0]);
+        var secondGuess = document.getElementById(cards_ids[1]);
+        firstGuess.onclick = null;
+        secondGuess.onclick = null;
 
         // Clear both arrays
         vals = [];
@@ -117,8 +119,9 @@ function memoryFlipTile(tile, val) {
           // tile_1.classList.remove("flip-card-front");
           // tile_2.classList.remove("flip-card-front");
         }
-        setTimeout(flip2Back, 700);
+        setTimeout(flip2Back, delay);
       }
     }
   }
 }
+

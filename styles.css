@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(52, 94, 233);
+    background-color: rgb(78, 117, 243);
 }
 
 h1 {
@@ -18,7 +18,7 @@ div {
     width: 700px;
     height: 700px;
     margin: auto;
-    border: 3px solid white;
+    border: 3px solid rgb(5, 1, 63);
     padding: 10px;
 }
 
@@ -67,3 +67,31 @@ div {
 .flipCard .flip-card-inner {
     transform: rotateY(180deg);
 }
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-family: cursive, sans-serif;
+    background:transparent;
+    color: #fff;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 4px;
+    border-radius: 15px;
+    font-size: large;
+  }
+
+select {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-family: cursive, sans-serif;
+    outline: 0;
+    background:transparent;
+    color: rgb(198, 197, 245);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 4px;
+    border-radius: 15px;
+    font-size: large;
+  }

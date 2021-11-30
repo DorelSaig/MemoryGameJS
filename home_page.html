@@ -1,15 +1,34 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>Home Page Memory Game</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <h1 style="font-family:Calibri; color:whitesmoke; font-size:64px;" >משחק זכרון - קופה ראשית </h1>
+    <h1 style="font-family:Calibri; color:whitesmoke; font-size:64px;">משחק זכרון - קופה ראשית </h1>
+    <div id="game"></div>
+    <script src="index.js"></script>
+
     <center>
-        <img src="/assets/head_logo.png" width="450px" height="325px">
+        <img src="/assets/head_logo.png"> <br>
+        <form name="George">
+            <p><select name="example" size="1">
+                    <option value="/memory_game.html">4 x 4</option>
+                    <option value="/memory_game.html">5 X 5</option>
+                </select></p>
+
+            <script type="text/javascript">
+                function go() {
+                    location =
+                        document.George.example.
+                            options[document.George.example.selectedIndex].value
+                }
+            </script>
+            <input type="button" value="Submit" onClick="go()">
+        </form>
     </center>
+
 </body>
 
 </html>
