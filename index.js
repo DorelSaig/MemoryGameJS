@@ -3,8 +3,8 @@ var icons_array = [
   "/assets/STK-20211117-WA0011.webp",
   "/assets/STK-20210823-WA0078.webp",
   "/assets/STK-20210823-WA0078.webp",
-  "/assets/MSTK-20210822-WA0075.webp",
-  "/assets/MSTK-20210822-WA0075.webp",
+  "/assets/STK-20210822-WA0075.webp",
+  "/assets/STK-20210822-WA0075.webp",
   "/assets/STK-20211027-WA0033.webp",
   "/assets/STK-20211027-WA0033.webp",
   "/assets/STK-20210823-WA0069.webp",
@@ -29,11 +29,10 @@ var vals = [];
 var cards_ids = [];
 var cards_flipped = 0;
 var delay = 1200;
-
-
+var size = 0;
 
 Array.prototype.memory_tile_shuffle = function () {
-  var i = this.length,
+  var i = size,
     j,
     temp;
   while (--i > 0) {
@@ -44,13 +43,35 @@ Array.prototype.memory_tile_shuffle = function () {
   }
 };
 
-newBoard();
+//newBoard();
+get();
+
+function get() {
+  var startString = "";
+  console.log(size);
+  startString +=
+    '<center><input type="button" value="Start Game" onclick="newBoard()" /></center>';
+  document.getElementById("memory_board").innerHTML = startString;
+}
 
 function newBoard() {
+  //Board Size Setting.
+  var theBoard = document.getElementById("memory_board");
+
+  console.log(size);
+
+  if (size == 16) {
+    theBoard.style.height = "700px";
+    theBoard.style.width = "700px";
+  } else {
+    theBoard.style.height = "880px";
+    theBoard.style.width = "880px";
+  }
+
   cards_flipped = 0;
   var output = "";
   icons_array.memory_tile_shuffle();
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < size; i++) {
     output +=
       '<div id="tile_' +
       i +
@@ -100,7 +121,7 @@ function memoryFlipTile(tile, val) {
         cards_ids = [];
 
         // Check to see if the whole board is cleared
-        if (cards_flipped == icons_array.length) {
+        if (cards_flipped == size) {
           alert("Board cleared... generating new board");
           document.getElementById("memory_board").innerHTML = "";
           newBoard();
@@ -127,4 +148,3 @@ function memoryFlipTile(tile, val) {
     }
   }
 }
-
