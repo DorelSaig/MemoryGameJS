@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home Page Memory Game</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
+<head>
+  <title>Home Page Memory Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+
+<body>
+  <center>
     <h1 style="font-family: Calibri; color: whitesmoke; font-size: 64px">
       משחק זכרון - קופה ראשית
     </h1>
-    <script src="index.js"></script>
 
-    <center>
-      <img src="/assets/head_logo.png" /> <br />
+    <img src="/assets/head_logo.png" /> <br />
 
-      <select id="comboSelection">
-        <option value="16">4 x 4</option>
-        <option value="25">5 X 5</option>
-      </select>
+    <div>
+      <a href="memory_game4x4.html">
+        <button class="btn btn-handle">Submit 4 x 4</button>
+      </a>
+    </div>
 
-      <script>
-        function go() {
-          var size = document.getElementById("comboSelection").value;
-          var newWin = window.open("memory_game.html");
+    <div>
+      <a href="memory_game5x5.html">
+        <button class="btn btn-handle">Submit 5 x 5</button>
+      </a>
+    </div>
 
-          newWin.onload = function () {
-            this.size = size;
-            console.log(this.size);
-          };
-          //console.log(size);
-          //location = "./memory_game.html";
-        }
-      </script>
+  </center>
+</body>
 
-      <button type="button" onClick="go()">Submit</button>
-    </center>
-  </body>
 </html>
