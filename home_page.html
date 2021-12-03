@@ -22,14 +22,10 @@
           </form>
         </div>
       </div>
-      <script>
-        var player1Name = document.getElementById('player1Name');
-        console.log(player1Name.value);
-      </script>
 
       <div class="submit">
         <a href="memory_game4x4.html">
-          <button class="submit1">Submit 4 x 4</button>
+          <button class="submit1" onclick="setplayers()">Submit 4 x 4</button>
         </a>
         <a href="memory_game5x5.html">
           <button class="submit2">Submit 5 x 5</button>
@@ -40,7 +36,14 @@
       </div>
   </section>
 
+  <script>
+    function setplayers(){
+      localStorage.setItem("player1", document.getElementById("player1Name").value);
+      localStorage.setItem("player2", document.getElementById("player2Name").value);
+    }
+  </script> 
 
+<script src="./index.js"></script>
 
 </body>
 </html>
