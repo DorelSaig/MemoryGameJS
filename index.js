@@ -1,15 +1,18 @@
 // scritps.js
+
 const cards = document.querySelectorAll('.memory-card');
 
 var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 
+var player1Score = 1;
+var player2Score = 1;
 
 function flipCard() {
-  if (lockBoard) 
+  if (lockBoard)
     return;
-  if (this === firstCard) 
+  if (this === firstCard)
     return;
 
   this.classList.add('flip');
@@ -32,7 +35,7 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-  
+
   resetBoard();
 }
 

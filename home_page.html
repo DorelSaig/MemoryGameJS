@@ -13,25 +13,34 @@
     <div class="login_box">
       <div class="left">
         <div class="contact">
-          <form action="memory_game4x4.html">
+          <form>
             <h3>SIGN IN</h3>
-            <input type="text" placeholder="Player 1">
-            <input type="text" placeholder="Player 2">
+            <label for="player1Name">Player 1: </label>
+            <input type="text" placeholder="Player 1" id="player1Name">
+            <label for="player2Name">Player 2: </label>
+            <input type="text" placeholder="Player 2" id="player2Name">
           </form>
         </div>
       </div>
-        <div class="submit">
-          <a href="memory_game4x4.html">
-            <button class="submit1">Submit 4 x 4</button>
-          </a>
-          <a href="memory_game5x5.html">
-            <button class="submit2">Submit 5 x 5</button>
-          </a>
-        </div>
+      <script>
+        var player1Name = document.getElementById('player1Name');
+        console.log(player1Name.value);
+      </script>
+
+      <div class="submit">
+        <a href="memory_game4x4.html">
+          <button class="submit1">Submit 4 x 4</button>
+        </a>
+        <a href="memory_game5x5.html">
+          <button class="submit2">Submit 5 x 5</button>
+        </a>
+      </div>
       <div class="right">
         <img src="/assets/head_logo.png" width="400px" height="285px" />
       </div>
   </section>
-</body>
 
+
+
+</body>
 </html>

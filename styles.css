@@ -91,7 +91,7 @@ button {
   font-size: large;
 }
 
-img {
+.right img {
   width: 80%;
   margin-top: 25%;
   margin-left: 10%;
@@ -122,9 +122,11 @@ img {
   height: 100%;
   padding: 25px 25px;
 }
+
 .login_box .right {
   width: 59%;
   height: 100%;
+  margin-top: 30px;
 }
 
 .left .contact {
@@ -134,7 +136,6 @@ img {
   align-self: center;
   height: 100%;
   width: 73%;
-  margin: auto;
   color: #fff;
 }
 
@@ -165,7 +166,6 @@ img {
   padding: 15px 70px;
   border-radius: 8px;
   display: block;
-  margin: auto;
   margin-top: 240px;
   background: rgb(196, 156, 104);
   color: #fff;
@@ -177,7 +177,6 @@ img {
   padding: 15px 70px;
   border-radius: 8px;
   display: block;
-  margin: auto;
   margin-top: 10px;
   background: rgb(196, 156, 104);
   color: #fff;
@@ -188,3 +187,4 @@ img {
   position: relative;
   background: black
 }
+
