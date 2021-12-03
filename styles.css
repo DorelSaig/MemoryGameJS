@@ -1,8 +1,10 @@
 /* styles.css */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap%27");
 * {
   margin: 0px auto;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -75,16 +77,9 @@ body {
   }
 }
 
-h1 {
-  text-align: center;
-  display: flex;
-  text-shadow: 2px 2px rgb(196, 156, 104);
-}
-
 button {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-bottom: 15px;
   margin-top: 15px;
   font-family: cursive, sans-serif;
@@ -94,4 +89,102 @@ button {
   padding: 4px;
   border-radius: 15px;
   font-size: large;
+}
+
+img {
+  width: 80%;
+  margin-top: 25%;
+  margin-left: 10%;
+}
+
+.login {
+  height: 100%;
+  width: 100%;
+  background: black;
+  position: relative;
+}
+
+.login_box {
+  width: 1050px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 1px 4px 22px -8px #0004;
+  display: flex;
+  background: black;
+}
+
+.login_box .left {
+  width: 41%;
+  height: 100%;
+  padding: 25px 25px;
+}
+.login_box .right {
+  width: 59%;
+  height: 100%;
+}
+
+.left .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 73%;
+  margin: auto;
+  color: #fff;
+}
+
+.left h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.left input {
+  border: none;
+  width: 80%;
+  margin: 15px 0px;
+  border-bottom: 1px solid #4f30677d;
+  padding: 7px 9px;
+  width: 100%;
+  overflow: hidden;
+  background: floralwhite;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.left {
+  background: black
+}
+
+.submit1 {
+  border: none;
+  padding: 15px 70px;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  margin-top: 240px;
+  background: rgb(196, 156, 104);
+  color: #fff;
+  font-weight: bold;
+}
+
+.submit2 {
+  border: none;
+  padding: 15px 70px;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  background: rgb(196, 156, 104);
+  color: #fff;
+  font-weight: bold;
+}
+
+.right {
+  position: relative;
+  background: black
 }
