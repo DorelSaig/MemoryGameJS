@@ -5,6 +5,8 @@ var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 
+var countMatch = 0;
+
 var turn = true; // true = player1 false = player2
 
 var player1Score = 0;
@@ -12,6 +14,7 @@ var player2Score = 0;
 
 var player1 = "";
 var player2 = "";
+
 
 function flipCard() {
     if (lockBoard) return;
@@ -41,6 +44,10 @@ function disableCards() {
     secondCard.removeEventListener("click", flipCard);
     updateScore();
     resetBoard();
+    countMatch ++;
+    if(localStorage.getItem(size) == countMatch){
+        console.log("done")
+    }
 }
 
 function unflipCards() {
@@ -105,15 +112,14 @@ cards.forEach((card) => card.addEventListener("click", flipCard));
 
 
 function updateJson() {
-    
     var obj = {
         data: []
     };
     obj.data.push({ player1: player1, player1Score: player1Score, player2: player2, player2Score: player2Score });
     var json = JSON.stringify(obj);
 
-    var fs = require('fs');
-    fs.writeFile('data.json', json, 'utf8', callback);
+    //var fs = require('fs');
+    //fs.writeFile('data.json', json, 'utf8', callback);
 
     console.log(json);
 }
