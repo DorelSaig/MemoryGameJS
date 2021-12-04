@@ -1,6 +1,4 @@
 // scritps.js
-import express from 'express';
-
 const cards = document.querySelectorAll(".memory-card");
 
 var hasFlippedCard = false;
@@ -100,7 +98,6 @@ function getPlayers() {
 
 }
 
-
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
@@ -124,13 +121,4 @@ function updateJson() {
     json = JSON.stringify(data);
 
     console.log(json);
-
-    const fs = require('fs');
-    fs.writeFile('./data.json', json, err => {
-        if (err) {
-            console.log('Error writing file', err)
-        } else {
-            console.log('Successfully wrote file')
-        }
-    })
 }
