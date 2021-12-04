@@ -1,4 +1,6 @@
 // scritps.js
+import express from 'express';
+
 const cards = document.querySelectorAll(".memory-card");
 
 var hasFlippedCard = false;
@@ -14,7 +16,7 @@ var player2Score = 0;
 
 var player1 = "";
 var player2 = "";
-
+var size = localStorage.getItem("size");;
 
 function flipCard() {
     if (lockBoard) return;
@@ -44,9 +46,12 @@ function disableCards() {
     secondCard.removeEventListener("click", flipCard);
     updateScore();
     resetBoard();
-    countMatch ++;
-    if(localStorage.getItem(size) == countMatch){
-        console.log("done")
+    countMatch++;
+
+
+    if (parseInt(size) == countMatch) {
+        updateJson();
+        location = './home_page.html';
     }
 }
 
@@ -103,23 +108,29 @@ function resetBoard() {
 
 (function shuffle() {
     cards.forEach((card) => {
-        var randomPos = Math.floor(Math.random() * 16);
+        var randomPos = Math.floor(Math.random() * size * 2);
         card.style.order = randomPos;
     });
 })();
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-
 function updateJson() {
-    var obj = {
-        data: []
-    };
-    obj.data.push({ player1: player1, player1Score: player1Score, player2: player2, player2Score: player2Score });
-    var json = JSON.stringify(obj);
+    var data = {};
+    var json = JSON.stringify(data);
 
-    //var fs = require('fs');
-    //fs.writeFile('data.json', json, 'utf8', callback);
+    data[player1] = player1Score;
+    data[player2] = player2Score;
+    json = JSON.stringify(data);
 
     console.log(json);
+
+    const fs = require('fs');
+    fs.writeFile('./data.json', json, err => {
+        if (err) {
+            console.log('Error writing file', err)
+        } else {
+            console.log('Successfully wrote file')
+        }
+    })
 }

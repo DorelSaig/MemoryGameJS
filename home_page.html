@@ -25,10 +25,10 @@
 
       <div class="submit">
         <a href="memory_game4x4.html">
-          <button class="submit1" onclick="setplayers()">Submit 4 x 4</button>
+          <button class="submit1" onclick="setPlayers('8')">Submit 4 x 4</button>
         </a>
         <a href="memory_game5x5.html">
-          <button class="submit2">Submit 5 x 5</button>
+          <button class="submit2" onclick="setPlayers('12')">Submit 5 x 5</button>
         </a>
       </div>
       <div class="right">
@@ -37,9 +37,10 @@
   </section>
 
   <script>
-    function setPlayers(){
+    function setPlayers(size){
       localStorage.setItem("player1", document.getElementById("player1Name").value);
       localStorage.setItem("player2", document.getElementById("player2Name").value);
+      localStorage.setItem("size", size);
     }
   </script> 
 
