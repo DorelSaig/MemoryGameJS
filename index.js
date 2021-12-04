@@ -1,5 +1,4 @@
 // scritps.js
-
 const cards = document.querySelectorAll(".memory-card");
 
 var hasFlippedCard = false;
@@ -85,9 +84,10 @@ function getPlayers() {
     player2 += localStorage.getItem("player2");
 
     document.getElementById("LBL_player1").innerHTML = player1;
-
     document.getElementById("LBL_player2").innerHTML = player2;
+
 }
+
 
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
@@ -102,3 +102,18 @@ function resetBoard() {
 })();
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+
+function updateJson() {
+    
+    var obj = {
+        data: []
+    };
+    obj.data.push({ player1: player1, player1Score: player1Score, player2: player2, player2Score: player2Score });
+    var json = JSON.stringify(obj);
+
+    var fs = require('fs');
+    fs.writeFile('data.json', json, 'utf8', callback);
+
+    console.log(json);
+}
