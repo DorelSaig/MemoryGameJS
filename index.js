@@ -47,7 +47,7 @@ function disableCards() {
     countMatch++;
 
 
-    if (parseInt(size) == countMatch) {
+    if (parseInt(size) == countMatch) { //game over
         updateJson();
         location = './home_page.html';
     }
@@ -113,12 +113,9 @@ function resetBoard() {
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
 function updateJson() {
-    var data = {};
-    var json = JSON.stringify(data);
+    var dataJson = JSON.parse(localStorage.getItem("data"));
 
-    data[player1] = player1Score;
-    data[player2] = player2Score;
-    json = JSON.stringify(data);
-
-    console.log(json);
+    dataJson[player1] = player1Score;
+    dataJson[player2] = player2Score;
+    localStorage.setItem("data", JSON.stringify(dataJson));
 }

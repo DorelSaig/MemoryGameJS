@@ -36,15 +36,26 @@
       </div>
   </section>
 
+
+
   <script>
-    function setPlayers(size){
+    var data = {};
+    var json;
+
+    function setPlayers(size) {
       localStorage.setItem("player1", document.getElementById("player1Name").value);
       localStorage.setItem("player2", document.getElementById("player2Name").value);
       localStorage.setItem("size", size);
-    }
-  </script> 
 
-<script src="./index.js"></script>
+      data = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : {};
+
+      json = JSON.stringify(data);
+      localStorage.setItem("data", json);
+    }
+  </script>
+
+  <script src="./index.js"></script>
 
 </body>
+
 </html>
